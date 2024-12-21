@@ -8,7 +8,7 @@ import folium #для ТЕПЛОВОЙ карты, пришлось от нее 
 from flask import Flask
 
 # API ключ и URL
-API_KEY = "996566916623226a832d3fb57dc04d1b"
+API_KEY = "OPEN-WEATHER API"
 BASE_URL = "http://api.openweathermap.org/data/2.5/forecast"
 
 # Получение данных о погоде
