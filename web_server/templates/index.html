@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проверка погоды</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .form-group button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 30px;
+        }
+        .result h2 {
+            color: #333;
+        }
+        .city-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        .error {
+            color: red;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Проверка погоды</h1>
+    <form method="POST" action="/check-weather">
+        <div class="form-group">
+            <label for="start">Начальный город:</label>
+            <input type="text" id="start" name="start" required>
+        </div>
+        <div class="form-group">
+            <label for="end">Конечный город:</label>
+            <input type="text" id="end" name="end" required>
+        </div>
+        <div class="form-group">
+            <button type="submit">Проверить погоду</button>
+        </div>
+    </form>
+
+    {% if error %}
+    <div class="error">
+        <p>{{ error }}</p>
+    </div>
+    {% endif %}
+
+    {% if result %}
+    <div class="result">
+        <h2>Результаты:</h2>
+        <h3>{{ result.start.city }}:</h3>
+        <img src="{{ url_for('static', filename='images/' + result.start.city + '.jpg') }}"
+             alt="Изображение {{ result.start.city }}"
+             class="city-image"
+             onerror="this.src='{{ url_for('static', filename='images/no-image.jpg') }}'">
+        <p>Координаты: {{ result.start.coordinates }}</p>
+        <p>Температура: {{ result.start.weather.temperature }}°C</p>
+        <p>Влажность: {{ result.start.weather.humidity }}%</p>
+        <p>Скорость ветра: {{ result.start.weather.wind_speed }} км/ч</p>
+        <p>Вероятность осадков: {{ result.start.weather.precipitation_probability }}%</p>
+        <p>Плохая погода: {{ 'Да' if result.start.is_bad_weather else 'Нет' }}</p>
+
+        <h3>{{ result.end.city }}:</h3>
+        <img src="{{ url_for('static', filename='images/' + result.end.city + '.jpg') }}"
+             alt="Изображение {{ result.end.city }}"
+             class="city-image"
+             onerror="this.src='{{ url_for('static', filename='images/no-image.jpg') }}'">
+        <p>Координаты: {{ result.end.coordinates }}</p>
+        <p>Температура: {{ result.end.weather.temperature }}°C</p>
+        <p>Влажность: {{ result.end.weather.humidity }}%</p>
+        <p>Скорость ветра: {{ result.end.weather.wind_speed }} км/ч</p>
+        <p>Вероятность осадков: {{ result.end.weather.precipitation_probability }}%</p>
+        <p>Плохая погода: {{ 'Да' if result.end.is_bad_weather else 'Нет' }}</p>
+    </div>
+    {% endif %}
+</div>
+</body>
+</html>
