@@ -6,7 +6,7 @@
 
 Привет! Это мой проект **WeatherBot**, который позволяет запрашивать прогноз погоды для нескольких городов по маршруту. Проект написан с использованием Python и работает через Telegram-бот. Я решил, что стандартных приложений погоды недостаточно: они скучные, а я хотел что-то с кнопками, графиками, и чтобы было весело пользоваться. Теперь вы можете узнать температуру, осадки и даже увидеть карту прогноза погоды на маршруте.
 
-![Проект](projectA.jpg)
+![Проект](pics_for_readme/projectA.jpg)
 
 ### Основные фичи
 (ВНИМАНИЕ! ВСЕ АПИ ДЕАКТИВИРОВАНЫ И СТОЯТ В КАЧЕСТВЕ ПРИМЕРА!)
@@ -96,13 +96,13 @@ async def create_interactive_map_with_weather(cities):
 
 ### 1. Структура проекта
 
-![Структура проекта](struct.png)
+![Структура проекта](pics_for_readme/struct.png)
 
 ---
 
 ### 2. Начальный диалог с ботом
 
-![Начальный диалог](dialog.png)
+![Начальный диалог](pics_for_readme/dialog.png)
 
 ---
 
@@ -110,14 +110,14 @@ async def create_interactive_map_with_weather(cities):
 
 График температуры для маршрута Москва — Саратов — Санкт-Петербург на 3 дня:
 
-![График температуры](temperature.png)
+![График температуры](pics_for_readme/temperature.png)
 
 ---
 
 ### 4. График ветра
 
 
-![График ветра](wind.png)
+![График ветра](pics_for_readme/wind.png)
 
 ---
 
@@ -125,7 +125,7 @@ async def create_interactive_map_with_weather(cities):
 
 Пример логов обработки карты в консоли:
 
-![Логи карты](logs.png)
+![Логи карты](pics_for_readme/logs.png)
 
 ---
 
@@ -133,13 +133,13 @@ async def create_interactive_map_with_weather(cities):
 
 JSON-ответ для маршрута Москва — Тверь — Владимир:
 
-![JSON ответ карты](json.png)
+![JSON ответ карты](pics_for_readme/json.png)
 
 ---
 
 ### 7. Кнопки выбора интервалов и функций
 
-![Кнопки в Telegram](menu.png)
+![Кнопки в Telegram](pics_for_readme/menu.png)
 
 ---
 
@@ -148,13 +148,13 @@ JSON-ответ для маршрута Москва — Тверь — Влад
 Интерактивная карта маршрута Кострома — Москва — Тверь:  
 Файл карты сохраняется в: `telegram_bot/web_server_2/interactive_map.html`
 
-![Интерактивная карта](map.png)
+![Интерактивная карта](pics_for_readme/map.png)
 
 ---
 
 ### 9. Отправка карты ботом
 
-![Карта в Telegram](map_menu.png)
+![Карта в Telegram](pics_for_readme/map_menu.png)
 
 ---
 
@@ -183,7 +183,7 @@ JSON-ответ для маршрута Москва — Тверь — Влад
 
 1. Клонируйте репозиторий:
    ```
-   git clone https://github.com/username/weatherbot.git
+   git clone https://github.com/qwertyEg/telegram_bot_weather
    ```
 2. Установите зависимости:
    ```
@@ -211,4 +211,4 @@ JSON-ответ для маршрута Москва — Тверь — Влад
 - **Telegram**: [zezezete](https://t.me/zezezete)
 - **Почта**: [awfullth@gmail.com](mailto:awfullth@gmail.com)
 - **Фото профиля**:  
-  ![Мое фото](me.jpg)
+  ![Мое фото](pics_for_readme/me.jpg)

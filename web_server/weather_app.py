@@ -3,7 +3,7 @@ import requests
 
 app = Flask(__name__)
 
-API_KEY = 'dlAAuPPefeThG8ZuvArR5lGEAZ7T2eyE'
+API_KEY =
 BASE_URL = 'http://dataservice.accuweather.com'
 
 def is_bad_weather(temperature, wind_speed, precipitation_probability):
